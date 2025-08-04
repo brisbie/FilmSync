@@ -25,6 +25,7 @@
 /home/ebrisbin/.nuget/packages/harfbuzzsharp/8.3.1.1/lib/net8.0/HarfBuzzSharp.dll
 /home/ebrisbin/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/Microsoft.CSharp.dll
+/home/ebrisbin/.nuget/packages/microsoft.data.sqlite.core/9.0.7/lib/net8.0/Microsoft.Data.Sqlite.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/Microsoft.VisualBasic.Core.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/Microsoft.VisualBasic.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/Microsoft.Win32.Primitives.dll
@@ -32,6 +33,9 @@
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/mscorlib.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/netstandard.dll
 /home/ebrisbin/.nuget/packages/skiasharp/2.88.9/lib/net6.0/SkiaSharp.dll
+/home/ebrisbin/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.10/lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll
+/home/ebrisbin/.nuget/packages/sqlitepclraw.core/2.1.10/lib/netstandard2.0/SQLitePCLRaw.core.dll
+/home/ebrisbin/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.10/lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/System.AppContext.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/System.Buffers.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/System.Collections.Concurrent.dll

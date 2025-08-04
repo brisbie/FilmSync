@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4A8OtplM5XtJ591k7BaYu488uYGpl5UoGGlxmoH0sEl+1dJGBB1zpEgc3g9bIc3jLcyp7ZZXU4EVMefPLR198g==",
+  "dgSpecHash": "MddvjoYD/jbTTy/Sq6togIkXmuNX3V7DR+RPCeHrPGO7RVbbrkXYN/coSoQq/H1RAfeb2AGkJ7O4fEkgik4viw==",
   "success": true,
   "projectFilePath": "/home/ebrisbin/Documents/MovieCatalog-App/MovieCatalog-App.csproj",
   "expectedPackageFiles": [
@@ -25,12 +25,19 @@
     "/home/ebrisbin/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/8.3.1.1/harfbuzzsharp.nativeassets.webassembly.8.3.1.1.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/harfbuzzsharp.nativeassets.win32/8.3.1.1/harfbuzzsharp.nativeassets.win32.8.3.1.1.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
+    "/home/ebrisbin/.nuget/packages/microsoft.data.sqlite/9.0.7/microsoft.data.sqlite.9.0.7.nupkg.sha512",
+    "/home/ebrisbin/.nuget/packages/microsoft.data.sqlite.core/9.0.7/microsoft.data.sqlite.core.9.0.7.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/skiasharp/2.88.9/skiasharp.2.88.9.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/skiasharp.nativeassets.linux/2.88.9/skiasharp.nativeassets.linux.2.88.9.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/skiasharp.nativeassets.macos/2.88.9/skiasharp.nativeassets.macos.2.88.9.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/skiasharp.nativeassets.webassembly/2.88.9/skiasharp.nativeassets.webassembly.2.88.9.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/skiasharp.nativeassets.win32/2.88.9/skiasharp.nativeassets.win32.2.88.9.nupkg.sha512",
+    "/home/ebrisbin/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.10/sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
+    "/home/ebrisbin/.nuget/packages/sqlitepclraw.core/2.1.10/sqlitepclraw.core.2.1.10.nupkg.sha512",
+    "/home/ebrisbin/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.10/sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",
+    "/home/ebrisbin/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.10/sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
+    "/home/ebrisbin/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/tmds.dbus.protocol/0.21.2/tmds.dbus.protocol.0.21.2.nupkg.sha512"
   ],
   "logs": []
