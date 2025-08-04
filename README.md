@@ -22,8 +22,8 @@ A cross-platform desktop application to track and catalog movies, featuring a ch
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/MovieCatalogApp.git
-   cd MovieCatalogApp
+   git clone https://github.com/brisbie/FilmSync.git
+   cd FilmSync
    ```
 
 2. Restore dependencies and run:
