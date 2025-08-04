@@ -4,12 +4,15 @@
         Width="400" Height="300"
         Title="Movie Catalog">
   
-  <StackPanel>
-    <TextBlock Text="My Movie Catalog"
-               FontSize="24"
-               FontWeight="Bold"
-               Margin="10"
-               HorizontalAlignment="Center"/>
+
+
+  <StackPanel Background = "#737373">
+    <!--LOGO IMAGE-->
+    <Image Source="avares://MovieCatalog-App/Assets/logo.png"
+      Width="200"
+      Height="200"
+      Margin="10"/>
+    
   </StackPanel>
 
 </Window>

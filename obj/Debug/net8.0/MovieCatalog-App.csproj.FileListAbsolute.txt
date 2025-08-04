@@ -66,6 +66,7 @@
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.AssemblyInfoInputs.cache
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.AssemblyInfo.cs
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.csproj.CoreCompileInputs.cache
+/home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.sourcelink.json
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.csproj.CopyComplete
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.dll
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/refint/MovieCatalog-App.dll
