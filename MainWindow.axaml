@@ -1,31 +1,31 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="MovieCatalogApp.MainWindow"
-        Width="400" Height="300"
-        Title="Movie Catalog">
+        Title="FilmSync"
+        Background = "White"
+        Width="800" Height="600">
 
-  <DockPanel Background="#737373">
+    <StackPanel Orientation="Vertical">
+        <!-- Logo image at the top -->
+        <Image Source="avares://MovieCatalog-App/Assets/logo.png"
+               Width="400" Height="200" HorizontalAlignment="Center"/>
 
-    <!-- Navbar docked at the top -->
-    <Border Background="#333" Height="40" DockPanel.Dock="Top">
-      <StackPanel Orientation="Horizontal" Spacing="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0">
-        <TextBlock Text="Home" Foreground="White" FontWeight="Bold" VerticalAlignment="Center"/>
-        <TextBlock Text="Movies" Foreground="White" VerticalAlignment="Center"/>
-        <TextBlock Text="About" Foreground="White" VerticalAlignment="Center"/>
-        <TextBlock Text="Contact" Foreground="White" VerticalAlignment="Center"/>
-      </StackPanel>
-    </Border>
+        <!-- Navbar below the logo -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="50">
+            <Button Content="Browse" Margin="10" Foreground = "Black" FontSize = "16"/>
+            <Button Content="Favorites" Margin="10" Foreground = "Black" FontSize = "16"/>
+            <Button Content="Movie Bot" Margin="10" Foreground = "Black" FontSize = "16"/>
+            <Button Content="Settings" Margin="10" Foreground = "Black" FontSize = "16"/>
+        </StackPanel>
 
-    <!-- Main content below navbar -->
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0">
-      <Image Source="avares://MovieCatalog-App/Assets/logo.png"
-             Width="200"
-             Height="200"
-             Margin="10"/>
+        <!-- Rest of your content goes here -->
+        <TextBlock Text="Welcome to Film Sync!" HorizontalAlignment="Center"
+          FontSize = "24"
+          FontWeight = "Bold"
+          Foreground = "Black"
+          Margin = "0, 40, 0, 0"
+        />
     </StackPanel>
-
-  </DockPanel>
-  
 </Window>
 
 
