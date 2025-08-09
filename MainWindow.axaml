@@ -2,30 +2,84 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="MovieCatalogApp.MainWindow"
         Title="FilmSync"
-        Background = "White"
+        Background = "#EDE8CA"
         Width="800" Height="600">
 
-    <StackPanel Orientation="Vertical">
-        <!-- Logo image at the top -->
-        <Image Source="avares://MovieCatalog-App/Assets/logo.png"
-               Width="400" Height="200" HorizontalAlignment="Center"/>
+  <Grid>
+    <!-- Logo  -->
+    <Image Source="avares://MovieCatalog-App/Assets/logo.png"
+      Width = "400" 
+      Height = "200"
+      VerticalAlignment = "Top"
+      Margin = "0, 40, 0, 0"
+    />
 
-        <!-- Navbar below the logo -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="50">
-            <Button Content="Browse" Margin="10" Foreground = "Black" FontSize = "16"/>
-            <Button Content="Favorites" Margin="10" Foreground = "Black" FontSize = "16"/>
-            <Button Content="Movie Bot" Margin="10" Foreground = "Black" FontSize = "16"/>
-            <Button Content="Settings" Margin="10" Foreground = "Black" FontSize = "16"/>
-        </StackPanel>
+  <!-- Login Box -->
 
-        <!-- Rest of your content goes here -->
-        <TextBlock Text="Welcome to Film Sync!" HorizontalAlignment="Center"
-          FontSize = "24"
-          FontWeight = "Bold"
+<Border 
+    VerticalAlignment = "Center"
+    Width = "650" 
+    Height = "320"
+    BorderBrush = "Black"
+    BorderThickness = "2"
+    CornerRadius = "10"
+    Padding = "10"
+    Background = "#66FFFFFF">
+
+    <StackPanel>
+      <TextBlock 
+          Text = "Login"
+          VerticalAlignment = "Top"
+          HorizontalAlignment = "Center"
+          Margin = "0,20,0,0"
           Foreground = "Black"
-          Margin = "0, 40, 0, 0"
-        />
+          FontSize = "42"
+          FontWeight = "Bold"
+      />
+
+      <!-- Login Controls -->
+
+      <TextBox
+        Name = "Usernamebox"
+        VerticalAlignment = "Center" 
+        Width = "200"
+        Margin = "0,60,0,0"  
+        Watermark = "Username" 
+      />
+
+      <TextBox
+        Name = "Passwordbox" 
+        VerticalAlignment = "Center"
+        Width = "200"
+        Margin = "0,10,0,0" 
+        Watermark = "Password" 
+      />
+      
+      <Button 
+        Content = "_  Login" 
+        Width = "100" 
+        Height = "40" 
+        Margin = "15"
+        HorizontalAlignment = "Center" 
+        VerticalAlignment = "Center"
+        Background = "#77A859"
+        Padding = "0"
+        CornerRadius = "10"
+        FontSize = "26"
+
+      />
+
+
+        
+      
     </StackPanel>
+    
+</Border>
+
+
+
+
+  </Grid>
 </Window>
 
 
