@@ -1,0 +1,70 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MovieCatalogApp.SignUp"
+             Background="#EDE8CA"
+             Width="800" Height="700"
+             FontFamily="AnonymicePro Nerd Font"
+>
+
+  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+    <!-- FilmSync Logo on top -->
+    <Image Source="avares://MovieCatalog-App/Assets/logo.png"
+           Width="400"
+           Height="200"
+           VerticalAlignment="Top" />
+
+    <!-- Sign Up box border below -->
+    <Border Width="650"
+            Height="450"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="10"
+            Padding="10"
+            Background="#66FFFFFF">
+
+      <StackPanel>
+        <TextBlock Text="Sign Up"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Margin="0,20,0,0"
+                   Foreground="Black"
+                   FontSize="42"
+                   FontWeight="Bold" />
+
+        <TextBox Name="UsernameBox"
+                 Width="200"
+                 Margin="0,60,0,0"
+                 Watermark="Username" />
+
+        <TextBox Name="PasswordBox"
+                 Width="200"
+                 Margin="0,10,0,0"
+                 Watermark="Password" />
+
+        <Button Name="SignUpButton"
+                Content="Sign Up"
+                Width="200"
+                Height="45"
+                Margin="15"
+                HorizontalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="#77A859"
+                CornerRadius="10"
+                FontSize="26"
+                Click="SignUpClicked" />
+
+        <Button Name="BackToWelcome"
+                Content="Back"
+                Height="45"
+                Margin="15"
+                HorizontalAlignment="Center"
+                Background="#77A859"
+                CornerRadius="10"
+                FontSize="26"
+                Click="BackButtonClicked" />
+      </StackPanel>
+    </Border>
+    
+  </StackPanel>
+</UserControl>

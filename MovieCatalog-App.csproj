@@ -24,5 +24,6 @@
 
   <ItemGroup>
     <AvaloniaResource Include="Assets/logo.png" />
+
   </ItemGroup>
 </Project>

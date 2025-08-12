@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MovieCatalogApp.WelcomePage"
+             Background="#EDE8CA"
+             Width="800" Height="600"
+             FontFamily="AnonymicePro Nerd Font"
+>
+
+  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
+
+    <!-- Logo on top -->
+    <Image Source="avares://MovieCatalog-App/Assets/logo.png"
+           Width="400" 
+           Height="200"
+           HorizontalAlignment="Center"
+    />
+
+    <!-- Welcome box below -->
+    <Border
+            Width="650"
+            Height="300"
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="10"
+            Padding="10"
+            Background="#66FFFFFF">
+
+      <StackPanel>
+        <TextBlock Text="Welcome"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   Margin="0,20,0,0"
+                   Foreground="Black"
+                   FontSize="42"
+                   FontWeight="Bold" />
+
+        <Button Content="Login"
+                Width="200"
+                Height="45"
+                Margin="15"
+                HorizontalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="#77A859"
+                FontSize="26"
+                CornerRadius="10"
+                Click="OnLoginClicked" />
+
+        <Button Content="Sign Up"
+                Width="200"
+                Height="45"
+                Margin="10"
+                HorizontalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="#77A859"
+                FontSize="26"
+                CornerRadius="10"
+                Click="OnSignUpClicked" />
+      </StackPanel>
+
+    </Border>
+  </StackPanel>
+</UserControl>
