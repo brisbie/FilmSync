@@ -1,5 +1,8 @@
 # FilmSync
 
+![FilmSync Logo](assets/logo.png)
+
+
 A cross-platform desktop application to track and catalog movies, featuring a chatbot that recommends movies based on your collection. Built with C# and Avalonia UI.
 
 ## Features
