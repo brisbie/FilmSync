@@ -11,6 +11,8 @@ A cross-platform desktop application to track and catalog movies, featuring a ch
 - Store movie metadata using a SQL database (e.g., MariaDB or SQLite)  
 - Chatbot integration for personalized movie recommendations  
 - Cross-platform support: runs on Windows, Linux, and macOS  
+- User account creation to support multiple users using the program
+
 
 ## Getting Started
 
