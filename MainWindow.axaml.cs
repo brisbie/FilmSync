@@ -8,6 +8,9 @@ namespace MovieCatalogApp;
 public partial class MainWindow : Window
 {
     private readonly DatabaseService dbService;
+
+    public DatabaseService DbService => dbService;
+
     public MainWindow()
     {
         InitializeComponent();

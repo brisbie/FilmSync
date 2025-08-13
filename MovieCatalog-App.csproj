@@ -24,6 +24,15 @@
 
   <ItemGroup>
     <AvaloniaResource Include="Assets/logo.png" />
+  </ItemGroup>
 
+  <!-- Automatically include all .axaml and their code-behind -->
+  <ItemGroup>
+    <AvaloniaXaml Update="**\*.axaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaXaml>
+    <Compile Update="**\*.axaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

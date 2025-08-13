@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MovieCatalogApp.HomePage"
+             Width="800" Height="600"
+             Background="Red">
+  
+  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+    <TextBlock x:Name="WelcomeText"
+               Text="Welcome!"
+               FontSize="36"
+               FontWeight="Bold"
+               HorizontalAlignment="Center" />
+    <!-- Other UI here -->
+  </StackPanel>
+</UserControl>

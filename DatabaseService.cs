@@ -1,5 +1,6 @@
 using Microsoft.Data.Sqlite;
 using System.IO;
+using System;
 
 namespace MovieCatalogApp.Services
 {
@@ -21,7 +22,7 @@ namespace MovieCatalogApp.Services
             connection.Open();
 
             var command = connection.CreateCommand();
-                command.CommandText = @"
+            command.CommandText = @"
                     CREATE TABLE IF NOT EXISTS Users (
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     Username TEXT NOT NULL,
@@ -45,5 +46,24 @@ namespace MovieCatalogApp.Services
             command.Parameters.AddWithValue("$password", password); // HASH LATER
             command.ExecuteNonQuery();
         }
+        
+        public bool ValidateUser(string username, string password)
+        {
+            using var connection = new SqliteConnection($"Data Source={DbFileName}");
+            connection.Open();
+
+            var command = connection.CreateCommand();
+            command.CommandText = @"
+                SELECT COUNT(1)
+                FROM Users
+                WHERE Username = $username AND Password = $password;
+            ";
+            command.Parameters.AddWithValue("$username", username);
+            command.Parameters.AddWithValue("$password", password);
+
+            var result = command.ExecuteScalar();
+            return Convert.ToInt32(result) > 0;
+        }
+
     }
 }
