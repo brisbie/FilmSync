@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MovieCatalogApp.Alert"
+        Width="300" Height="120"
+        WindowStartupLocation="CenterOwner"
+        Background="#66FFFFFF"
+        FontFamily="AnonymicePro Nerd Font"
+        CanResize="False"
+        Title="Alert">
+
+    <StackPanel Margin="10">
+        <TextBlock Name="MessageText"
+                   Text="Message goes here"
+                   TextWrapping="Wrap"
+                   HorizontalAlignment  = "Center"
+                   FontSize = "16"
+                   Margin="0,0,0,10"/>
+        <Button Width="80"
+                HorizontalAlignment="Center"
+                Background="#77A859"
+                CornerRadius="10"
+                Click="Ok_Click">
+            <Button.Content>
+                OK
+            </Button.Content>
+        </Button>
+    </StackPanel>
+</Window>

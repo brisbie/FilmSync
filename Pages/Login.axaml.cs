@@ -53,7 +53,7 @@ namespace MovieCatalogApp
                 return;
             }
 
-            // Validate user, e.g. (you need a ValidateUser method)
+            // Validate user
             bool validUser = mainWindow.DbService.ValidateUser(username, password);
             
             if (validUser)
@@ -62,7 +62,9 @@ namespace MovieCatalogApp
             }
             else
             {
-                // Show error message on UI  FIGURE THIS OUT 
+                var alert = new Alert("Incorrect username or password!");
+                alert.ShowDialog(mainWindow);
+                return;
             }
         }
 
