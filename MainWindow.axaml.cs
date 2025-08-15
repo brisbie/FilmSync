@@ -20,9 +20,6 @@ public partial class MainWindow : Window
         //Start database
         dbService = new DatabaseService();
 
-        // Add a test user 
-        dbService.AddUser("evan", "1234");
-
 
     }
 

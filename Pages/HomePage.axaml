@@ -1,15 +1,34 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="MovieCatalogApp.HomePage"
-             Width="800" Height="600"
-             Background="Red">
-  
-  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-    <TextBlock x:Name="WelcomeText"
-               Text="Welcome!"
-               FontSize="36"
-               FontWeight="Bold"
-               HorizontalAlignment="Center" />
-    <!-- Other UI here -->
-  </StackPanel>
+
+>  
+
+  <Grid ColumnDefinitions="200,*" Background="Red">
+    <Border Grid.Column="0" Padding="20" Background="Green">
+      <Grid Background="Blue" RowDefinitions = "*, Auto">
+        
+        <Image Source="avares://MovieCatalog-App/Assets/logo.png"
+          Grid.Row = "0"
+          Width="200"
+          Height="100"
+          VerticalAlignment="Top"
+        />
+        
+        
+        
+        
+        <TextBlock 
+          Grid.Row = "1"
+          Grid.Column="1"
+          x:Name="WelcomeText"
+          Text="Welcome!"
+          VerticalAlignment="Top"
+          HorizontalAlignment="Left"
+        />
+      </Grid>
+    </Border>
+
+  </Grid>
 </UserControl>
+
