@@ -4,10 +4,10 @@
 
   <Grid ColumnDefinitions="200,*" Background="Red">
     <Border Grid.Column="0" Padding="20" Background="Green">
-      <!-- Define rows: 1 for welcome, 1 for buttons -->
+              <!-- Left column content -->
       <Grid Background="Blue" RowDefinitions="Auto, Auto">
 
-        <!-- Welcome Text at the top -->
+
         <StackPanel Grid.Row="0">
           <Image Source="avares://MovieCatalog-App/Assets/logo.png"
                  Width="200" Height="100"
@@ -21,9 +21,10 @@
 
         <!-- Buttons below -->
         <StackPanel Grid.Row="1" Margin="0,10,0,0">
+
           <Button Content="Search" Padding="10" Margin = "0, 10, 0, 10"/>
           <Button Content="Browse" Padding="10" Margin = "0, 10, 0, 10"/>
-          <Button Content="Lists" Padding="10" Margin = "0, 10, 0, 10"/>
+          <Button Content="Collection" Padding="10" Margin = "0, 10, 0, 10"/>
           <Button Content="Diary" Padding="10" Margin = "0, 10, 0, 10"/>
           <Button Content="Recommendations" Padding="10" Margin = "0, 10, 0, 10"/>
           
@@ -31,6 +32,48 @@
 
       </Grid>
     </Border>
+
+        <!-- Right column content -->
+    <Grid Grid.Column="1">
+
+        <Border Grid.Column="0" Padding="20" Background="Green" Margin = "10">
+    <!-- Nested grid with two rows -->
+          <Grid RowDefinitions="*,*"> <!-- 2 equal-height rows -->
+              
+              <!-- Trending Movies Section -->
+              <StackPanel Grid.Row="0" Margin="0,0,0,10">
+                  <TextBlock Text="Trending" 
+                            FontSize="24" 
+                            FontWeight="Bold"
+                            Margin="0,0,0,10"/>
+                  <!-- Example movie list -->
+                  <ListBox>
+                      <ListBoxItem Content="Movie 1"/>
+                      <ListBoxItem Content="Movie 2"/>
+                      <ListBoxItem Content="Movie 3"/>
+                  </ListBox>
+              </StackPanel>
+
+              <!-- Newly Added Movies Section -->
+              <StackPanel Grid.Row="1" Margin="0,10,0,0">
+                  <TextBlock Text="Newly Added" 
+                            FontSize="24" 
+                            FontWeight="Bold"
+                            Margin="0,0,0,10"/>
+                  <!-- Example movie list -->
+                  <ListBox>
+                      <ListBoxItem Content="Movie A"/>
+                      <ListBoxItem Content="Movie B"/>
+                      <ListBoxItem Content="Movie C"/>
+                  </ListBox>
+              </StackPanel>
+
+          </Grid>
+        </Border>
+
+    </Grid>
+
+
   </Grid>
 </UserControl>
 
