@@ -1,11 +1,16 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="MovieCatalogApp.HomePage">
+             x:Class="MovieCatalogApp.HomePage"             
+             FontFamily="AnonymicePro Nerd Font"             
+             Background="#EDE8CA">
 
-  <Grid ColumnDefinitions="200,*" Background="Red">
-    <Border Grid.Column="0" Padding="20" Background="Green">
+  <Grid ColumnDefinitions="200,*" Background="#EDE8CA">
+    <Border Grid.Column="0" Padding="10" Background="#66FFFFFF"        
+            BorderBrush="Black"
+            BorderThickness="2"
+            CornerRadius="10">
               <!-- Left column content -->
-      <Grid Background="Blue" RowDefinitions="Auto, Auto">
+      <Grid RowDefinitions="Auto, Auto">
 
 
         <StackPanel Grid.Row="0">
@@ -14,6 +19,7 @@
                  VerticalAlignment="Top"/>
           <TextBlock x:Name="WelcomeText"
                      Text="Welcome!"
+                     FontSize = "16"
                      VerticalAlignment="Top"
                      HorizontalAlignment="Left"
                      Margin="0, 10, 0, 10"/>
@@ -22,11 +28,11 @@
         <!-- Buttons below -->
         <StackPanel Grid.Row="1" Margin="0,10,0,0">
 
-          <Button Content="Search" Padding="10" Margin = "0, 10, 0, 10"/>
-          <Button Content="Browse" Padding="10" Margin = "0, 10, 0, 10"/>
-          <Button Content="Collection" Padding="10" Margin = "0, 10, 0, 10"/>
-          <Button Content="Diary" Padding="10" Margin = "0, 10, 0, 10"/>
-          <Button Content="Recommendations" Padding="10" Margin = "0, 10, 0, 10"/>
+          <Button Content="Search" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10" />
+          <Button Content="Browse" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10"/>
+          <Button Content="Collection" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10"/>
+          <Button Content="Diary" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10"/>
+          <Button Content="Recommendations" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10"/>
           
         </StackPanel>
 
@@ -34,44 +40,43 @@
     </Border>
 
         <!-- Right column content -->
-    <Grid Grid.Column="1">
-
-        <Border Grid.Column="0" Padding="20" Background="Green" Margin = "10">
-    <!-- Nested grid with two rows -->
-          <Grid RowDefinitions="*,*"> <!-- 2 equal-height rows -->
-              
-              <!-- Trending Movies Section -->
-              <StackPanel Grid.Row="0" Margin="0,0,0,10">
-                  <TextBlock Text="Trending" 
-                            FontSize="24" 
-                            FontWeight="Bold"
-                            Margin="0,0,0,10"/>
-                  <!-- Example movie list -->
-                  <ListBox>
-                      <ListBoxItem Content="Movie 1"/>
-                      <ListBoxItem Content="Movie 2"/>
-                      <ListBoxItem Content="Movie 3"/>
-                  </ListBox>
-              </StackPanel>
-
-              <!-- Newly Added Movies Section -->
-              <StackPanel Grid.Row="1" Margin="0,10,0,0">
-                  <TextBlock Text="Newly Added" 
-                            FontSize="24" 
-                            FontWeight="Bold"
-                            Margin="0,0,0,10"/>
-                  <!-- Example movie list -->
-                  <ListBox>
-                      <ListBoxItem Content="Movie A"/>
-                      <ListBoxItem Content="Movie B"/>
-                      <ListBoxItem Content="Movie C"/>
-                  </ListBox>
-              </StackPanel>
-
-          </Grid>
+        <Grid Grid.Column="1" Margin="10, 400, 10, 10">
+    <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
+        <!-- Trending Movies Section -->
+        <Border Background="#66FFFFFF"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="10"
+                Padding="10">
+            <StackPanel>
+                <TextBlock Text="Trending" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+                <ListBox>
+                    <ListBoxItem Content="Movie 1"/>
+                    <ListBoxItem Content="Movie 2"/>
+                    <ListBoxItem Content="Movie 3"/>
+                </ListBox>
+            </StackPanel>
         </Border>
 
+        <!-- Newly Added Movies Section -->
+        <Border Background="#66FFFFFF"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="10"
+                Padding="10"
+                Grid.Row="1">
+            <StackPanel>
+                <TextBlock Text="Your recent movies" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+                <ListBox>
+                    <ListBoxItem Content="Movie A"/>
+                    <ListBoxItem Content="Movie B"/>
+                    <ListBoxItem Content="Movie C"/>
+                </ListBox>
+            </StackPanel>
+        </Border>
     </Grid>
+</Grid>
+
 
 
   </Grid>
