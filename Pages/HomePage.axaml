@@ -1,34 +1,37 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="MovieCatalogApp.HomePage"
-
->  
+             x:Class="MovieCatalogApp.HomePage">
 
   <Grid ColumnDefinitions="200,*" Background="Red">
     <Border Grid.Column="0" Padding="20" Background="Green">
-      <Grid Background="Blue" RowDefinitions = "*, Auto">
-        
-        <Image Source="avares://MovieCatalog-App/Assets/logo.png"
-          Grid.Row = "0"
-          Width="200"
-          Height="100"
-          VerticalAlignment="Top"
-        />
-        
-        
-        
-        
-        <TextBlock 
-          Grid.Row = "1"
-          Grid.Column="1"
-          x:Name="WelcomeText"
-          Text="Welcome!"
-          VerticalAlignment="Top"
-          HorizontalAlignment="Left"
-        />
+      <!-- Define rows: 1 for welcome, 1 for buttons -->
+      <Grid Background="Blue" RowDefinitions="Auto, Auto">
+
+        <!-- Welcome Text at the top -->
+        <StackPanel Grid.Row="0">
+          <Image Source="avares://MovieCatalog-App/Assets/logo.png"
+                 Width="200" Height="100"
+                 VerticalAlignment="Top"/>
+          <TextBlock x:Name="WelcomeText"
+                     Text="Welcome!"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     Margin="0, 10, 0, 10"/>
+        </StackPanel>
+
+        <!-- Buttons below -->
+        <StackPanel Grid.Row="1" Margin="0,10,0,0">
+          <Button Content="Search" Padding="10" Margin = "0, 10, 0, 10"/>
+          <Button Content="Browse" Padding="10" Margin = "0, 10, 0, 10"/>
+          <Button Content="Lists" Padding="10" Margin = "0, 10, 0, 10"/>
+          <Button Content="Diary" Padding="10" Margin = "0, 10, 0, 10"/>
+          <Button Content="Recommendations" Padding="10" Margin = "0, 10, 0, 10"/>
+          
+        </StackPanel>
+
       </Grid>
     </Border>
-
   </Grid>
 </UserControl>
+
 
