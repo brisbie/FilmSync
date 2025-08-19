@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MddvjoYD/jbTTy/Sq6togIkXmuNX3V7DR+RPCeHrPGO7RVbbrkXYN/coSoQq/H1RAfeb2AGkJ7O4fEkgik4viw==",
+  "dgSpecHash": "RTAwjQe63wRvbk6eoZ5EUmJwXj5pjafeN7bf7M3rveISHnBe0CRn1YGE2wot0szck0nrCwhBBfdWCNd9f7joDg==",
   "success": true,
   "projectFilePath": "/home/ebrisbin/Documents/MovieCatalog-App/MovieCatalog-App.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "/home/ebrisbin/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/microsoft.data.sqlite/9.0.7/microsoft.data.sqlite.9.0.7.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/microsoft.data.sqlite.core/9.0.7/microsoft.data.sqlite.core.9.0.7.nupkg.sha512",
+    "/home/ebrisbin/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/skiasharp/2.88.9/skiasharp.2.88.9.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/skiasharp.nativeassets.linux/2.88.9/skiasharp.nativeassets.linux.2.88.9.nupkg.sha512",
     "/home/ebrisbin/.nuget/packages/skiasharp.nativeassets.macos/2.88.9/skiasharp.nativeassets.macos.2.88.9.nupkg.sha512",
