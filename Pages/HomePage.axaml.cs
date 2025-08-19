@@ -1,33 +1,45 @@
 using Avalonia.Controls;
-
+using MovieCatalogApp.Models;
+using MovieCatalogApp.Services;
+using System.Linq;
 using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace MovieCatalogApp
 {
     public partial class HomePage : UserControl
     {
+        private readonly TmdbService _tmdbService;
+        private readonly ObservableCollection<Movie> trendingMovies = new ObservableCollection<Movie>();
+
         public HomePage(string username)
         {
-            InitializeComponent(); // Make sure this is the first thing called
+            InitializeComponent();
 
-            // Then use username safely
-            if (string.IsNullOrEmpty(username))
-            {
-                username = "Guest";
-            }
+            _tmdbService = new TmdbService();
 
-            // Example: maybe you have a TextBlock named "WelcomeText"
-            // Make sure you use FindControl and null-check it
             var welcomeText = this.FindControl<TextBlock>("WelcomeText");
             if (welcomeText != null)
+                welcomeText.Text = $"Welcome, {username ?? "Guest"}!";
+
+            LoadTrendingMovies();
+        }
+        private async void LoadTrendingMovies()
+        {
+            var trendingList = this.FindControl<ItemsControl>("TrendingList");
+            if (trendingList != null)
             {
-                welcomeText.Text = $"Welcome, {username}!";
-            }
-            else
-            {
-                Console.WriteLine("WelcomeText control not found.");
+                var movies = await _tmdbService.GetTrendingMoviesAsync();
+
+                // Load poster bitmaps
+                foreach (var movie in movies)
+                    await movie.LoadPosterAsync();
+
+                trendingList.ItemsSource = movies; // now set ItemsSource
             }
         }
+
+
     }
 }
-

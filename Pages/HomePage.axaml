@@ -1,17 +1,17 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:models="clr-namespace:MovieCatalogApp.Models"
              x:Class="MovieCatalogApp.HomePage"             
              FontFamily="AnonymicePro Nerd Font"             
              Background="#EDE8CA">
 
   <Grid ColumnDefinitions="200,*" Background="#EDE8CA">
+    <!-- Left Column -->
     <Border Grid.Column="0" Padding="10" Background="#66FFFFFF"        
             BorderBrush="Black"
             BorderThickness="2"
             CornerRadius="10">
-              <!-- Left column content -->
       <Grid RowDefinitions="Auto, Auto">
-
 
         <StackPanel Grid.Row="0">
           <Image Source="avares://MovieCatalog-App/Assets/logo.png"
@@ -19,67 +19,89 @@
                  VerticalAlignment="Top"/>
           <TextBlock x:Name="WelcomeText"
                      Text="Welcome!"
-                     FontSize = "16"
+                     FontSize="16"
                      VerticalAlignment="Top"
                      HorizontalAlignment="Left"
-                     Margin="0, 10, 0, 10"/>
+                     Margin="0,10,0,10"/>
         </StackPanel>
 
-        <!-- Buttons below -->
+        <!-- Buttons -->
         <StackPanel Grid.Row="1" Margin="0,10,0,0">
-
-          <Button Content="Search" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10" />
-          <Button Content="Browse" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10"/>
-          <Button Content="Collection" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10"/>
-          <Button Content="Diary" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10"/>
-          <Button Content="Recommendations" Padding="10" Margin = "0, 10, 0, 10" Width = "175" Background="#77A859" CornerRadius="10"/>
-          
+          <Button Content="Search" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
+          <Button Content="Browse" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
+          <Button Content="Collection" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
+          <Button Content="Diary" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
+          <Button Content="Recommendations" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
         </StackPanel>
 
       </Grid>
     </Border>
 
-        <!-- Right column content -->
-        <Grid Grid.Column="1" Margin="10, 400, 10, 10">
-    <Grid RowDefinitions="Auto,Auto" RowSpacing="10">
-        <!-- Trending Movies Section -->
-        <Border Background="#66FFFFFF"
-                BorderBrush="Black"
-                BorderThickness="2"
-                CornerRadius="10"
-                Padding="10">
-            <StackPanel>
-                <TextBlock Text="Trending" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
-                <ListBox>
-                    <ListBoxItem Content="Movie 1"/>
-                    <ListBoxItem Content="Movie 2"/>
-                    <ListBoxItem Content="Movie 3"/>
-                </ListBox>
-            </StackPanel>
-        </Border>
+    <!-- Right Column -->
+<Grid Grid.Column="1" Margin="10">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />      <!-- empty space at top -->
+        <RowDefinition Height="Auto" />   <!-- trending section -->
+        <RowDefinition Height="20" />     <!-- spacing -->
+        <RowDefinition Height="Auto" />   <!-- recently added section -->
+        <RowDefinition Height="*" />      <!-- empty space at bottom -->
+    </Grid.RowDefinitions>
 
-        <!-- Newly Added Movies Section -->
-        <Border Background="#66FFFFFF"
-                BorderBrush="Black"
-                BorderThickness="2"
-                CornerRadius="10"
-                Padding="10"
-                Grid.Row="1">
-            <StackPanel>
-                <TextBlock Text="Your recent movies" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
-                <ListBox>
-                    <ListBoxItem Content="Movie A"/>
-                    <ListBoxItem Content="Movie B"/>
-                    <ListBoxItem Content="Movie C"/>
-                </ListBox>
-            </StackPanel>
-        </Border>
-    </Grid>
+    <!-- Trending Section -->
+    <Border Grid.Row="1"
+            BorderBrush="Black" BorderThickness="2" 
+            CornerRadius="10" Padding="10" Background="#66FFFFFF">
+        <StackPanel>
+            <TextBlock Text="Trending" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,10"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Disabled">
+                <ItemsControl x:Name="TrendingList">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="models:Movie">
+                            <Image Source="{Binding PosterBitmap}" Width="150" Height="225" Margin="5"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </StackPanel>
+    </Border>
+
+    <!-- Recently Added Section -->
+    <Border Grid.Row="3"
+            BorderBrush="Black" BorderThickness="2" 
+            CornerRadius="10" Padding="10" Background="#66FFFFFF">
+        <StackPanel>
+            <TextBlock Text="Recently Added" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,10"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Disabled">
+                <ItemsControl x:Name="RecentlyAddedList">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="models:Movie">
+                            <Image Width="150" Height="225" Margin="5"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </StackPanel>
+    </Border>
 </Grid>
-
 
 
   </Grid>
 </UserControl>
-
-

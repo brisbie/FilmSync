@@ -1,17 +1,14 @@
 using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using MovieCatalogApp.Models;
+using System;
 
 namespace MovieCatalogApp.Services
 {
-    public class Movie
-    {
-        public string Title { get; set; } = "Unknown";
-        public string PosterPath { get; set; } = "";
-    }
-
     public class TmdbService
     {
         private readonly HttpClient _httpClient;
@@ -21,55 +18,57 @@ namespace MovieCatalogApp.Services
         {
             _httpClient = new HttpClient
             {
-                BaseAddress = new System.Uri("https://api.themoviedb.org/3/")
+                BaseAddress = new Uri("https://api.themoviedb.org/3/")
             };
 
-            var json = File.ReadAllText("appsettings.json");
-            using var doc = JsonDocument.Parse(json);
-            apiKey = doc.RootElement
-                        .GetProperty("TMDb")
-                        .GetProperty("ApiKey")
-                        .GetString() ?? "";
-        }
-
-        private async Task<List<Movie>> GetMoviesAsync(string endpoint)
-        {
-            var movies = new List<Movie>();
-
+            // Read the API key safely
             try
             {
-                var response = await _httpClient.GetAsync($"{endpoint}?api_key={apiKey}");
-                response.EnsureSuccessStatusCode();
-                var content = await response.Content.ReadAsStringAsync();
+                var json = File.ReadAllText("appsettings.json");
+                using var doc = JsonDocument.Parse(json);
 
-                using var doc = JsonDocument.Parse(content);
-                var results = doc.RootElement.GetProperty("results");
-
-                foreach (var movieElement in results.EnumerateArray())
+                if (doc.RootElement.TryGetProperty("TMDb", out var tmdbElement) &&
+                    tmdbElement.TryGetProperty("ApiKey", out var keyElement))
                 {
-                    movies.Add(new Movie
-                    {
-                        Title = movieElement.GetProperty("title").GetString() ?? "Unknown",
-                        PosterPath = movieElement.GetProperty("poster_path").GetString() ?? ""
-                    });
+                    apiKey = keyElement.GetString() ?? throw new Exception("API key is empty.");
+                }
+                else
+                {
+                    throw new Exception("TMDb.ApiKey not found in appsettings.json");
                 }
             }
-            catch
+            catch (FileNotFoundException)
             {
-                // Optionally log or handle errors
+                throw new Exception("appsettings.json file not found.");
+            }
+            catch (JsonException)
+            {
+                throw new Exception("Invalid JSON in appsettings.json");
+            }
+        }
+
+        public async Task<List<Movie>> GetTrendingMoviesAsync()
+        {
+            var response = await _httpClient.GetStringAsync($"trending/movie/week?api_key={apiKey}");
+            var json = JObject.Parse(response);
+            var results = json["results"];
+
+            var movies = new List<Movie>();
+            foreach (var movie in results)
+            {
+                string posterPath = movie["poster_path"]?.ToString() ?? "";
+                var m = new Movie
+                {
+                    Title = movie["title"]?.ToString() ?? "Unknown",
+                    PosterFullPath = $"https://image.tmdb.org/t/p/w500{posterPath}"
+                };
+                await m.LoadPosterAsync();
+                movies.Add(m);
             }
 
             return movies;
         }
 
-        public Task<List<Movie>> GetTrendingMoviesAsync()
-        {
-            return GetMoviesAsync("trending/movie/week");
-        }
 
-        public Task<List<Movie>> GetNowPlayingMoviesAsync()
-        {
-            return GetMoviesAsync("movie/now_playing");
-        }
     }
 }

@@ -1,4 +1,5 @@
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/MovieCatalog-App
+/home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/appsettings.json
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/MovieCatalog-App.deps.json
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/MovieCatalog-App.runtimeconfig.json
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/MovieCatalog-App.dll
@@ -30,6 +31,7 @@
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/HarfBuzzSharp.dll
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/MicroCom.Runtime.dll
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/Microsoft.Data.Sqlite.dll
+/home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/Newtonsoft.Json.dll
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/SkiaSharp.dll
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/SQLitePCLRaw.batteries_v2.dll
 /home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/SQLitePCLRaw.core.dll
@@ -98,4 +100,3 @@
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.pdb
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.genruntimeconfig.cache
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/ref/MovieCatalog-App.dll
-/home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/Newtonsoft.Json.dll
