@@ -1,51 +1,75 @@
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 
 namespace MovieCatalogApp.Services
 {
+    public class Movie
+    {
+        public string Title { get; set; } = "Unknown";
+        public string PosterPath { get; set; } = "";
+    }
+
     public class TmdbService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "YOUR_API_KEY_HERE"; // Replace this!
+        private readonly string apiKey;
 
         public TmdbService()
         {
-            _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new System.Uri("https://api.themoviedb.org/3/");
+            _httpClient = new HttpClient
+            {
+                BaseAddress = new System.Uri("https://api.themoviedb.org/3/")
+            };
+
+            var json = File.ReadAllText("appsettings.json");
+            using var doc = JsonDocument.Parse(json);
+            apiKey = doc.RootElement
+                        .GetProperty("TMDb")
+                        .GetProperty("ApiKey")
+                        .GetString() ?? "";
         }
 
-        // Get Trending Movies
-        public async Task<List<string>> GetTrendingMoviesAsync()
+        private async Task<List<Movie>> GetMoviesAsync(string endpoint)
         {
-            var response = await _httpClient.GetStringAsync($"trending/movie/week?api_key={_apiKey}");
-            var json = JObject.Parse(response);
-            var results = json["results"];
+            var movies = new List<Movie>();
 
-            var movies = new List<string>();
-            foreach (var movie in results)
+            try
             {
-                movies.Add(movie["title"]?.ToString() ?? "Unknown");
+                var response = await _httpClient.GetAsync($"{endpoint}?api_key={apiKey}");
+                response.EnsureSuccessStatusCode();
+                var content = await response.Content.ReadAsStringAsync();
+
+                using var doc = JsonDocument.Parse(content);
+                var results = doc.RootElement.GetProperty("results");
+
+                foreach (var movieElement in results.EnumerateArray())
+                {
+                    movies.Add(new Movie
+                    {
+                        Title = movieElement.GetProperty("title").GetString() ?? "Unknown",
+                        PosterPath = movieElement.GetProperty("poster_path").GetString() ?? ""
+                    });
+                }
+            }
+            catch
+            {
+                // Optionally log or handle errors
             }
 
             return movies;
         }
 
-        // Get Recently Added / Now Playing Movies
-        public async Task<List<string>> GetNowPlayingMoviesAsync()
+        public Task<List<Movie>> GetTrendingMoviesAsync()
         {
-            var response = await _httpClient.GetStringAsync($"movie/now_playing?api_key={_apiKey}");
-            var json = JObject.Parse(response);
-            var results = json["results"];
+            return GetMoviesAsync("trending/movie/week");
+        }
 
-            var movies = new List<string>();
-            foreach (var movie in results)
-            {
-                movies.Add(movie["title"]?.ToString() ?? "Unknown");
-            }
-
-            return movies;
+        public Task<List<Movie>> GetNowPlayingMoviesAsync()
+        {
+            return GetMoviesAsync("movie/now_playing");
         }
     }
 }

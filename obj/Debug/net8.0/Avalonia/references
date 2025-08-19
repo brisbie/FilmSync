@@ -32,6 +32,7 @@
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/Microsoft.Win32.Registry.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/mscorlib.dll
 /usr/lib64/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.18/ref/net8.0/netstandard.dll
+/home/ebrisbin/.nuget/packages/newtonsoft.json/13.0.3/lib/net6.0/Newtonsoft.Json.dll
 /home/ebrisbin/.nuget/packages/skiasharp/2.88.9/lib/net6.0/SkiaSharp.dll
 /home/ebrisbin/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.10/lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll
 /home/ebrisbin/.nuget/packages/sqlitepclraw.core/2.1.10/lib/netstandard2.0/SQLitePCLRaw.core.dll

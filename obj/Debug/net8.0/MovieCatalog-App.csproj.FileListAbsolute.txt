@@ -98,3 +98,4 @@
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.pdb
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/MovieCatalog-App.genruntimeconfig.cache
 /home/ebrisbin/Documents/MovieCatalog-App/obj/Debug/net8.0/ref/MovieCatalog-App.dll
+/home/ebrisbin/Documents/MovieCatalog-App/bin/Debug/net8.0/Newtonsoft.Json.dll
