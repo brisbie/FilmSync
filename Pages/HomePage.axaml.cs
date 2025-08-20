@@ -5,11 +5,14 @@ using System.Linq;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using MovieCatalogApp.Pages;
+using Avalonia.Interactivity;
 
 namespace MovieCatalogApp
 {
     public partial class HomePage : UserControl
     {
+        
         private readonly TmdbService _tmdbService;
         private readonly ObservableCollection<Movie> trendingMovies = new ObservableCollection<Movie>();
 
@@ -40,6 +43,16 @@ namespace MovieCatalogApp
             }
         }
 
+        private void OnBrowseClicked(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Browse button clicked");
+
+            if (this.VisualRoot is MainWindow mainWindow)
+            {
+                // Pass the username to BrowsePage
+                mainWindow.MainContent.Content = new BrowsePage(mainWindow.CurrentUsername);
+            }
+        }
 
     }
 }

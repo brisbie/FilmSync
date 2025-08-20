@@ -11,17 +11,21 @@ public partial class MainWindow : Window
 
     public DatabaseService DbService => dbService;
 
+    // Add this property
+    public string CurrentUsername { get; set; } = "Guest";
+
     public MainWindow()
     {
         InitializeComponent();
 
         MainContent.Content = new WelcomePage();
 
-        //Start database
+        // Start database
         dbService = new DatabaseService();
-
-
     }
+
+
+
 
     private void OnLoginClicked(object sender, RoutedEventArgs e)
     {

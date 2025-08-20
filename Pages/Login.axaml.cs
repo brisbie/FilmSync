@@ -58,8 +58,10 @@ namespace MovieCatalogApp
             
             if (validUser)
             {
+                mainWindow.CurrentUsername = username; // <-- store the logged-in username
                 mainWindow.MainContent.Content = new HomePage(username);
             }
+
             else
             {
                 var alert = new Alert("Incorrect username or password!");
