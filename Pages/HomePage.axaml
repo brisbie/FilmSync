@@ -30,8 +30,8 @@
           <Button Content="Home" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
           <Button Click="OnBrowseClicked" Content="Browse" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
           <Button Click = "OnCollectionClicked" Content="Collection" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
-          <Button Content="Diary" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
-          <Button Content="Recommendations" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
+          <Button Click = "OnDiaryClicked" Content="Diary" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
+          <Button Click = "OnRecommendationClicked" Content="Recommendations" Padding="10" Margin="0,10,0,10" Width="175" Background="#77A859" CornerRadius="10"/>
         </StackPanel>
 
       </Grid>

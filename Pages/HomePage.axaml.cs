@@ -53,17 +53,27 @@ namespace MovieCatalogApp
                 mainWindow.MainContent.Content = new BrowsePage(mainWindow.CurrentUsername);
             }
         }
-        
+
         private void OnCollectionClicked(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Browse button clicked");
+            Console.WriteLine("Collection button clicked");
 
             if (this.VisualRoot is MainWindow mainWindow)
             {
-                // Pass the username to BrowsePage
+                // Pass the username to Collection Page
                 mainWindow.MainContent.Content = new CollectionPage(mainWindow.CurrentUsername);
             }
         }
 
+        private void OnDiaryClicked(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Diary button clicked");
+
+            if (this.VisualRoot is MainWindow mainWindow)
+            {
+                // Pass the username to Diary Page
+                mainWindow.MainContent.Content = new DiaryPage(mainWindow.CurrentUsername);
+            }
+        }
     }
 }

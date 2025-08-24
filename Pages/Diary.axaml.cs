@@ -1,14 +1,13 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Interactivity;
-using System;
 
 namespace MovieCatalogApp.Pages;
 
-public partial class BrowsePage : UserControl
+public partial class DiaryPage : UserControl
 {
     private readonly string _username;
-    public BrowsePage(string username)
+    public DiaryPage(string username)
     {
         InitializeComponent();
 
@@ -21,7 +20,7 @@ public partial class BrowsePage : UserControl
     {
         AvaloniaXamlLoader.Load(this);
     }
-
+    
     private void OnHomeClicked(object sender, RoutedEventArgs e)
     {
         // Get the parent window
@@ -31,16 +30,5 @@ public partial class BrowsePage : UserControl
             mainWindow.MainContent.Content = new HomePage(mainWindow.CurrentUsername);
         }
     }
-    
-        private void OnCollectionClicked(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("Collection button clicked");
-
-            if (this.VisualRoot is MainWindow mainWindow)
-            {
-                // Pass the username to Collection Page
-                mainWindow.MainContent.Content = new CollectionPage(mainWindow.CurrentUsername);
-            }
-        }
 
 }
