@@ -12,7 +12,7 @@ namespace MovieCatalogApp
 {
     public partial class HomePage : UserControl
     {
-        
+
         private readonly TmdbService _tmdbService;
         private readonly ObservableCollection<Movie> trendingMovies = new ObservableCollection<Movie>();
 
@@ -51,6 +51,17 @@ namespace MovieCatalogApp
             {
                 // Pass the username to BrowsePage
                 mainWindow.MainContent.Content = new BrowsePage(mainWindow.CurrentUsername);
+            }
+        }
+        
+        private void OnCollectionClicked(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Browse button clicked");
+
+            if (this.VisualRoot is MainWindow mainWindow)
+            {
+                // Pass the username to BrowsePage
+                mainWindow.MainContent.Content = new CollectionPage(mainWindow.CurrentUsername);
             }
         }
 
