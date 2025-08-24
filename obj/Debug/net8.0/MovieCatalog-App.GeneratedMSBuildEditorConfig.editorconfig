@@ -43,6 +43,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/home/ebrisbin/Documents/MovieCatalog-App/Pages/Login.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/ebrisbin/Documents/MovieCatalog-App/Pages/Recommendation.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/ebrisbin/Documents/MovieCatalog-App/Pages/SignUp.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

@@ -75,5 +75,16 @@ namespace MovieCatalogApp
                 mainWindow.MainContent.Content = new DiaryPage(mainWindow.CurrentUsername);
             }
         }
+
+        private void OnRecommendationClicked(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Recomendation button clicked");
+
+            if (this.VisualRoot is MainWindow mainWindow)
+            {
+                // Pass the username to Diary Page
+                mainWindow.MainContent.Content = new RecommendationPage(mainWindow.CurrentUsername);
+            }
+        }
     }
 }
